@@ -1,13 +1,329 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* CUSTOM FONT - MOSK */
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Thin\ 100.ttf) format('truetype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Extra-Light\ 200.ttf) format('truetype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Light\ 300.ttf) format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Normal\ 400.ttf) format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Medium\ 500.ttf) format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Semi-Bold\ 600.ttf) format('truetype');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Bold\ 700.ttf) format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Extra-Bold\ 800.ttf) format('truetype');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Mosk';
+  src: url(fonts/Mosk\ Ultra-Bold\ 900.ttf) format('truetype');
+  font-weight: 900;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* END OF CUSTOM FONT - MOSK */
+
+
+
+/* ROOT VARIABLES */
+
+:root {
+  /* Color variables */
+  --darkColor: #102C2F;
+  --lightColor: #FFFFFF;
+  --redColor: #cd003d;
+  --brownColor: #706261;
+  /* Font size variables */
+  --h1SizeDesktop: 32px;
+  --h1SizeMobile: 20px;
+  --h2SizeDesktop: 28px;
+  --h2SizeMobile: 16px;
+  --subtitleSizeDesktop: 20px;
+  --subtitleSizeMobile: 13px;
+  --textoMSizeDesktop: 15px;
+  --textoMSizeMobile: 11px;
+  --textoLSizeDesktop: 16px;
+  --textoLSizeMobile: 14px;
+  /* Font weight variables */
+  --h1WeightDesktop: 700;
+  --h1WeightMobile: 700;
+  --h2WeightDesktop: 300;
+  --h2WeightMobile: 300;
+  --subtitleWeightDesktop: 500;
+  --subtitleWeightMobile: 500;
+  --textoMWeightDesktop: 500;
+  --textoMWeightMobile: 500;
+  --textoLWeightDesktop: 700;
+  --textoLWeightMobile: 700;
+}
+
+
+/* GLOBAL SETTINGS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mosk', sans-serif;
+}
+
+body {
+  background-color: var(--lightColor);
+}
+
+
+/* MODO METROPOLIS */
+.mode-metropolis-active {
+  border: 2px solid magenta;
+  color: magenta;
+}
+
+.mode-metropolis-inactive {
+  border: 2px solid black;
+  color: black;
+}
+
+.tubo-luz {
+  
+  height: 1rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.light-off {
+  border: 1px solid grey;
+  background-color: rgba(255,255,255, .8);
+  box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.96);
+}
+
+.white-light {
+  width: 34rem;
+  height: 0rem;
+  border-radius: 50px;
+  background-color: rgba(255,255,255, .7);
+  box-shadow: 1px 1px 24px 10px rgba(255,255,255,0.96);
+  -webkit-box-shadow: 1px 1px 24px 10px rgba(255,255,255,0.96), 1px 0px 9px 0px rgba(253,253,253,0.98);
+  -moz-box-shadow: 1px 1px 24px 10px rgba(255,255,255,0.96), 1px 0px 9px 0px rgba(253,253,253,0.98);
+
+}
+
+.light-on {
+  border-radius: 25px;
+  background-color: rgba(255, 0, 255, .5);
+  box-shadow: 0 0 2px white, 0 0 10px white, 0 0 20px magenta, 0 0 30px magenta,
+    0 0 40px magenta, 0 0 50px magenta;
+  -webkit-animation: destello 0.7s infinite alternate;
+  animation: destello 0.7s infinite alternate;
+}
+
+
+@-webkit-keyframes destello {
+  100% {
+    box-shadow: 0 0 3px white, 0 0 10px white, 0 0 20px white, 0 0 40px #0ba9ca,
+      0 0 70px magenta, 0 0 80px magenta;
+  }
+}
+
+@keyframes destello {
+  100% {
+    box-shadow: 0 0 3px white, 0 0 10px white, 0 0 20px white, 0 0 40px #0ba9ca,
+      0 0 70px magenta, 0 0 80px magenta;
+  }
+}
+
+/* Fin Modo Metropolis */
+
+
+/* Nav Toggler Button */
+
+.nav__toggler {
+  order: 2;
+  z-index: 9;
+}
+
+.nav__toggler div {
+  width: 18px;
+  height: 2px;
+  transition: 0.4s ease-in;
+}
+
+.line1 {
+  align-self: flex-end;
+}
+
+.nav__toggler {
+  cursor: pointer;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  align-self: center;
+  height: 100%;
+  margin-right: .5em;
+  z-index: 4;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-2px, 4px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.nav__active {
+  transform: translateX(0%);
+  transition: 0.5s linear;
+}
+
+.nav-collapsed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 .3em .3em .3em;
+}
+
+/* End Nav Toggler Button */
+
+/* THEME's SETTINGS */
+.dark-theme {
+  background-color: var(--darkColor);
+  color: var(--lightColor);
+}
+
+.light-theme {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+}
+.dark-theme-element {
+  background-color: var(--lightColor);
+  color: var(--lightColor);
+}
+
+.light-theme-element {
+  background-color: var(--darkColor);
+  color: var(--darkColor);
+}
+
+.darkIconBox {
+  background-color: var(--darkColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 98%;
+}
+
+.light-border {
+  border: 3px solid var(--lightColor);
+}
+
+.dark-border {
+  border: 3px solid var(--darkColor);
+}
+
+/* Toggle Button */
+
+
+.label {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  z-index: -2;
+  gap: 8px;
+}
+
+.icon {
+ z-index: 2;
+ filter: invert(100%) brightness(100%) grayscale(100%) hue-rotate(90deg) opacity(100%) contrast(175%);
+}
+.iconDark {
+  width: 100%;
+  height: 100%;
+  background-color: var(--darkColor);
+}
+
+.toggle-box {
+  background-color: var(--lightColor);
+  height: 44px;
+  width: 46px;
+  align-self: center;
+  position: absolute;
+  margin: 2px;
+  z-index: 9;
+  
+}
+.box-left {
+  left: 0rem;
+}
+
+.box-right {
+  left: 3rem;
+}
+
+/* END THEME'S SETTINGS */
+
+/* NAVBAR */
+
+.nav-logo {
+  width: 50px;
+  height: 62px;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+}
+
+/* End of NAVBAR */
+
+
+
+
+
+
+
+/* ======================================================================================================================= 
+===================================================== DESKTOP ============================================================ 
+======================================================================================================================= */
+
+@media screen and (min-width: 900px) {
+  /* NAVBAR */
+
+  .nav-logo {
+    width: 76px;
+    height: 62px;
+  }
 }
