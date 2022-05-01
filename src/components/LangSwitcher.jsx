@@ -1,43 +1,25 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
 
 
 const LangSwitcher = () => {
     const { language, langScripts, setLanguage } = useContext(LanguageContext)
     const {langs} = langScripts
-    const [ showLangs, setShowLangs ] = useState("")
 
 
-    const changeLanguage = (newLanguage) => {
+    const changeLanguage = () => {
 
-        switch(newLanguage) {
-            case "EN":
-                setLanguage("english")
-                break;
-            case "ES":
-                setLanguage("spanish")
-                break;
+        if(language === "spanish"){
+            setLanguage("english")
+        } else {
+            setLanguage("spanish")
         }
-        
     }
-
-    const openLangMenu = () => {
-        /*setShowLangs(prev => !prev)*/
-        !showLangs? setShowLangs("visible") : setShowLangs("")
-    }
+    
 
     return (
-        <li onClick={openLangMenu} className="nav-langSwitcher dropdown-toggle">
-            <p>{langScripts.langs[language]}</p>
-            
-            <ul className={`dropdown-menu ${showLangs}`}>
-                {Object.values(langs).map((lang) => {
-                    return(
-                        <li className="nav-li-lang" onClick={({target}) => changeLanguage(target.innerHTML)} key={lang}>{lang}</li>
-                    )
-                })}
-                
-            </ul>
+        <li onClick={changeLanguage} className="nav-langSwitcher lang-toggle">
+            <p>{langs[language]}</p>
         </li>
     )
 }

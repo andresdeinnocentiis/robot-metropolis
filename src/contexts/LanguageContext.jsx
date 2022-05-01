@@ -6,7 +6,7 @@ import { langScripts } from "../LangScripts/langScripts"
 const LanguageContext = createContext([])
 
 const LanguageContextProvider = ({children}) => {
-    const [language, setLanguage] = useState("english")
+    const [language, setLanguage] = useState("spanish")
     
     
     

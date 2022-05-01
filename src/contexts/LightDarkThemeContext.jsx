@@ -8,8 +8,7 @@ const LightDarkThemeContextProvider = ({children}) => {
     const [darkMode, setDarkMode] = useState(true)
 
     const toggleDarkMode = () => {
-
-        setDarkMode(prevDarkMode => !prevDarkMode)    
+        setDarkMode(prevDarkMode => !prevDarkMode)   
     }
 
     

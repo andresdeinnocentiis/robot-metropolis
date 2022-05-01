@@ -3,6 +3,9 @@ import { LightDarkThemeContext } from "../contexts/LightDarkThemeContext";
 import {NavLink} from "react-router-dom"
 import { TogglerOpen } from "./elements/NavButtonToggler";
 import { isMobile } from "../functions/isMobile";
+import NavItem from "./NavItem";
+import LangSwitcher from "./LangSwitcher";
+import { ButtonToggleLightDarkTheme } from "./elements/LightDarkThemeButton";
 import logoDesktopforLight from "../icons/logo-text-for-light.svg"
 import logoMobileforLight from "../icons/logo loader-for-light.svg"
 import logoDesktopforDark from "../icons/logo-text-for-dark.svg"
@@ -41,19 +44,38 @@ const Navbar = () => {
     
     
     return(
-        <nav id="navbar" className={`sticky ${darkMode? "dark-theme": "light-theme"}`}>
-            <div className="nav-collapsed">
-                <div className="nav-logo"><NavLink className='logoLink' to={"/"}><img className="logoImg" src={mobile ? logo.mobile : logo.desktop} alt="logo"></img></NavLink></div>
-                {mobile ? <TogglerOpen onClick={handleToggle}  toggleIcon={toggleIcon} /> : <></>}
-            </div>
-            
-            <div className={`nav-container ${navbarOpen}`}>          
-                <div className="nav-menu">
-                    <ul className="nav-ul">
-                        
-                    </ul>
+        <nav id="navbar" className={`sticky`}>
+            <div className={`nav-collapsed ${darkMode? "dark-theme-navbar": "light-theme-navbar"}`}>
+                <div className={`nav-logo ${navbarOpen ? 'full-logo' : ''}`}><NavLink className='logoLink' to={"/"}><img className="logoImg" src={mobile && !navbarOpen ? logo.mobile : logo.desktop} alt="logo"></img></NavLink></div>
+                {mobile ? 
+                    <TogglerOpen onClick={handleToggle}  toggleIcon={toggleIcon} /> 
+                        : 
+                    <div className={`nav-container nav__active`}>          
+                        <div className="nav-menu">
+                            <ul className="nav-ul">
+                                <NavItem />
+                                <LangSwitcher />
+                                <li className="li-instagram"><a href="https://www.instagram.com/robotmetropolis/" rel="noreferrer" target="_blank"><i className="fab fa-instagram"></i></a></li>
+                                <ButtonToggleLightDarkTheme />
+                                
+                            </ul>
+                        </div>
+                    </div>}
                 </div>
-            </div>
+                {navbarOpen ? 
+                    <div className={`nav-container ${navbarOpen} ${darkMode? "dark-theme-navbar": "light-theme-navbar"}`}>          
+                        <div className="nav-menu">
+                            <ul className="nav-ul">
+                                <NavItem />
+                                <LangSwitcher />
+                                <li className="li-instagram"><a href="http://"><i className="fab fa-instagram"></i></a></li>
+                                <ButtonToggleLightDarkTheme />
+                            </ul>
+                        </div>
+                    </div> 
+                        :
+                    <></>
+                }
         </nav>
     )
 }

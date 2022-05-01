@@ -1,13 +1,12 @@
 import { LanguageContextProvider } from "./contexts/LanguageContext";
 import { LightDarkThemeContextProvider } from "./contexts/LightDarkThemeContext";
-import { ButtonToggleLightDarkTheme } from "./components/elements/LightDarkThemeButton";
 import {
   BrowserRouter,
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 import NavBar from "./components/NavBar"
-
+import Main from "./components/Main";
 
 
 function App() {
@@ -16,12 +15,9 @@ function App() {
     <LanguageContextProvider>
       <BrowserRouter>
         <NavBar />
-        <ButtonToggleLightDarkTheme />
-        <Switch>
-          <Route exact path="/">
-
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+        </Routes>
       </BrowserRouter>
     </LanguageContextProvider>
     </LightDarkThemeContextProvider>

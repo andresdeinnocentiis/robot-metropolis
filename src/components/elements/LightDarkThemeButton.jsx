@@ -14,14 +14,15 @@ const ButtonToggleLightDarkTheme = () => {
 
 
     return (
-        
-        <div className={`label ${darkMode ? "light-theme-element light-border" : "light-theme-element dark-border"}`}>
-                <img className="icon" src={lightIcon} alt="" onClick={toggleDarkMode} />
-                <div className="darkIconBox">
-                    <img className="icon" src={darkIcon} alt="" onClick={toggleDarkMode} />
-                </div>
-                <div className={`toggle-box ${darkMode ? "box-left" : "box-right"}`} ></div>
-        </div>
+        <li className={`theme-label ${darkMode? "dark-theme-navbar": "light-theme-navbar"}`}>
+            <div className={`label ${darkMode ? "light-theme-element light-border" : "light-theme-element dark-border"}`}>
+                    <img onClick={toggleDarkMode} className={`icon ${!darkMode? 'light-mode-active' : ''}`} src={lightIcon} alt=""  />
+                    <div className="darkIconBox">
+                        <img onClick={toggleDarkMode} className={`icon ${darkMode? 'dark-mode-active' : ''}`} src={darkIcon} alt="" />
+                    </div>
+                    <div className={`toggle-box ${darkMode ? "box-left" : "box-right"}`} ></div>
+            </div>
+        </li>
     )
 }
 
