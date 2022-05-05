@@ -1,8 +1,8 @@
-import React, {useContext, useState} from "react";
-import { LightDarkThemeContext } from "../contexts/LightDarkThemeContext";
+import React, {useContext,useState} from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
+import AnimaticLogo from "./animaticLogo";
+import { LightDarkThemeContext } from "../contexts/LightDarkThemeContext";
 import { isMobile } from "../functions/isMobile";
-import animaticLogo from "./elements/animaticLogo";
 
 const Footer = () => {
 
@@ -17,14 +17,14 @@ const Footer = () => {
     } else {
         setMobile(true)
     }
-})
+  })
 
   return(
     <>
       <footer className="footer-container">
-        <animaticLogo />
+        <AnimaticLogo />
         <div className='footer-div'>
-          <a className="footer-icon" href="https://www.instagram.com/robotmetropolis/" target="_blank"><i className="fab fa-instagram"></i></a>
+          <a className="footer-icon" href="https://www.instagram.com/robotmetropolis/" rel="noreferrer" target="_blank"><i className="fab fa-instagram"></i></a>
           <p className='footer-li footer-text'>{langScripts.footer.text[language]}</p>
         </div>
       </footer>

@@ -552,14 +552,15 @@ a {
   /*FOOTER*/
 
   .footer-container{
+    margin-top: 100px;
     max-width: 100%;
-    height: 200px;
     display: flex;
     flex-flow: column wrap;
     place-content: center center;
   }
 
   .footer-div{
+    margin-top: 25px;
     width: 250px;
     display: flex;
     flex-flow: row wrap;
@@ -583,14 +584,80 @@ a {
     font-family:'Josefin-Sans';
   }
 
-  .logo-container{
-    width: 100%;
-    height: 62px;
-    background-color: #0ba9ca;
+  .logo-containerA{
+    width: 94px;
+    height: 94px;
+    position: relative;
+    align-self: center;
   }
 
-  .logoLine{
-    height: 10px;
-    background-color: white;
+  .dark-logoLine{
+    height: 3px;
+    background-color: var(--lightColor);
+  }
+
+  .light-logoLine{
+    height: 3px;
+    background-color: var(--darkColor);
+  }
+ 
+    
+  #lineA{
+    width: 57.5%;
+    position: absolute;
+    transform-origin: left;
+    transform: rotate(30deg);
+    visibility: hidden;
+  }
+
+  #lineB{
+    height: 3px;
+    width: 57.5%;
+    position: absolute;
+    transform-origin: right ;
+    transform: rotate(-30deg);
+    left: 42.5%;
+    visibility: hidden;
+
+  }
+
+  #lineC{
+    height: 3px;
+    width: 57.5%;
+    position: absolute;
+    transform-origin: left ;
+    transform: rotate(90deg);
+    left: 50%;
+    top: 28.5%;
+    visibility: hidden;
+
+  }
+  #lineD{
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    transform-origin: left ;
+    transform: rotate(0deg);
+    visibility: hidden;
+
+  }
+
+  #lineE{
+    height: 3px;
+    width: 100%; 
+    position: absolute;
+    transform-origin: left ;
+    transform: rotate(60deg);
+    visibility: hidden;
+
+  }
+
+  #lineF{
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    transform-origin: right ;
+    transform: rotate(-60deg);
+    visibility: hidden;
   }
 }
