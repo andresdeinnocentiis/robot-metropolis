@@ -47,6 +47,13 @@ const langScripts = {
             english: "More",
         },
     },
+
+    footer : {
+        text: {
+            spanish: "RobotMetropolis 2022",
+            english: "RobotMetropolis 2022"
+        }
+    },
     
     projects: {
         title: {

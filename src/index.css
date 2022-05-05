@@ -549,4 +549,48 @@ a {
   /* End of MAIN */
 
 
+  /*FOOTER*/
+
+  .footer-container{
+    max-width: 100%;
+    height: 200px;
+    display: flex;
+    flex-flow: column wrap;
+    place-content: center center;
+  }
+
+  .footer-div{
+    width: 250px;
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    flex-flow: row wrap;
+    place-content: center space-evenly;
+  }
+
+  .footer-icon{
+    font-size: 22px;
+    margin-top: -8px;
+  }
+
+  @font-face {
+    font-family: 'Josefin-Sans';
+    src: url("./fonts/JosefinSans-Regular.ttf");
+  }
+
+  .footer-text{
+    font: 22px;
+    font-family:'Josefin-Sans';
+  }
+
+  .logo-container{
+    width: 100%;
+    height: 62px;
+    background-color: #0ba9ca;
+  }
+
+  .logoLine{
+    height: 10px;
+    background-color: white;
+  }
 }

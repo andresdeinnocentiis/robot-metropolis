@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/NavBar"
 import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </LanguageContextProvider>
     </LightDarkThemeContextProvider>
