@@ -4,6 +4,7 @@ import { LightDarkThemeContext } from "../contexts/LightDarkThemeContext";
 import { LanguageContext } from "../contexts/LanguageContext";
 import logoDesktopforDark from "../icons/logo-text-for-dark.svg"
 import logoDesktopforLight from "../icons/logo-text-for-light.svg"
+import AnimaticLogo from "./animaticLogo";
 
 
 const Main = () => {
@@ -11,6 +12,9 @@ const Main = () => {
     const { language, langScripts } = useContext(LanguageContext)
     const [mobile, setMobile] = useState(isMobile())
     const [logo, setLogo] = useState(logoDesktopforDark)
+    const [expand, setExpand] = useState(false)
+    const [height, setHeight] = useState('13rem')
+    const [overflow, setOverflow] = useState('hidden')
 
     useEffect(() => {
         darkMode ? setLogo(logoDesktopforDark) : setLogo(logoDesktopforLight)
@@ -25,13 +29,38 @@ const Main = () => {
         }
     })
 
+    const styles = {
+        mainText: {
+            height: height,
+            overflow: overflow,
+        }
+    }
+
+    const handleExpand = (e) => {
+        if(!expand) {
+            setExpand(true)
+            setHeight('26rem')
+            setOverflow('auto')
+        } else {
+            setExpand(false)
+            setHeight('13rem')
+            setOverflow('hidden')
+        }
+    }
+
+
     return (
         <main className='main'>
             <div className="main-container">
                 {mobile ? <div className="main-logo"><img className="logoImg" src={logo} alt="logo"></img></div> : <></>}
                 <div className='main-paragraph'>
-                    <p className='main-text'>{langScripts.main.text[language]}</p>
-                    <p className='main-more'>{langScripts.main.verMas[language]}</p>
+                    {!mobile && <AnimaticLogo />}
+                    <p style={styles.mainText} className='main-text'>
+                        <span  className='line first-line'>{langScripts.main.text.firstLine[language]}</span>
+                        <br />
+                        <span className='line second-line'>{langScripts.main.text.secondLine[language]}</span>
+                    </p>
+                    <p onClick={handleExpand} className='main-more'>{ !expand? langScripts.main.verMas[language] : langScripts.main.verMenos[language]}</p>
                 </div>
             </div>
         </main>

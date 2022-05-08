@@ -31,6 +31,7 @@
   --subtitleWeightMobile: 500;
   --textoMWeightDesktop: 500;
   --textoMWeightMobile: 500;
+  --textoAllWeight:100;
   --textoLWeightDesktop: 700;
   --textoLWeightMobile: 700;
 }
@@ -50,6 +51,15 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.main-text {
+  text-align:start;
+  letter-spacing: 1px;
+}
+
+.line {
+
 }
 
 /* MODO METROPOLIS */
@@ -424,10 +434,21 @@ a {
 .main-text {
   text-align: center;
   font-size:var(--h2SizeMobile);
-  height: 80%;
-  height: 7rem;
-  padding: 1.3rem;
-  overflow: hidden;
+  font-weight: var(--textoAllWeight);
+  padding: 1.75rem;
+  transition: all .5s linear;
+  line-height: 25.32px;
+  
+}
+
+.main-text::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.main-text {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .main-more {
@@ -529,6 +550,7 @@ a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 3.5rem;
   }
 
   .main-paragraph {
@@ -537,12 +559,15 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
   }
 
   .main-text {
     text-align:start;
     font-size:var(--h2SizeDesktop);
-    line-height: 35.56px;
+    font-weight: var(--textoAllWeight);
+    line-height: 40.56px;
+    padding: 0 1.75rem 1.75rem 1.75rem;
   }
 
 
