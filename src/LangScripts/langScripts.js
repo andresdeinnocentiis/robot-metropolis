@@ -52,7 +52,7 @@ const langScripts = {
         },
         verMenos: {
             spanish: "Ver menos",
-            english: "Less...",
+            english: "Hide...",
         }
     },
 

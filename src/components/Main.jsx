@@ -13,7 +13,7 @@ const Main = () => {
     const [mobile, setMobile] = useState(isMobile())
     const [logo, setLogo] = useState(logoDesktopforDark)
     const [expand, setExpand] = useState(false)
-    const [height, setHeight] = useState('13rem')
+    const [height, setHeight] = useState('10rem')
     const [overflow, setOverflow] = useState('hidden')
 
     useEffect(() => {
@@ -39,11 +39,11 @@ const Main = () => {
     const handleExpand = (e) => {
         if(!expand) {
             setExpand(true)
-            setHeight('26.5rem')
+            setHeight('21rem')
             setOverflow('auto')
         } else {
             setExpand(false)
-            setHeight('13rem')
+            setHeight('10rem')
             setOverflow('hidden')
         }
     }
