@@ -39,7 +39,7 @@ const Main = () => {
     const handleExpand = (e) => {
         if(!expand) {
             setExpand(true)
-            setHeight('26rem')
+            setHeight('26.5rem')
             setOverflow('auto')
         } else {
             setExpand(false)
