@@ -7,6 +7,7 @@
   /* Color variables */
   --darkColor: #102C2F;
   --lightColor: #FFFFFF;
+  --blackColor:#000000;
   --darkColorTransparent: rgba(16, 44, 47, .8);
   --lightColorTransparent: rgba(255, 255, 255, .8);
   --redColor: #cd003d;
@@ -44,6 +45,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  /*outline: 1px solid #f00 !important;*/ /*Activar esta línea para ver el overflow*/
 }
 
 
@@ -58,8 +60,8 @@ a {
   letter-spacing: 1px;
 }
 
-.line {
-
+.frame__img-btn-i {
+  filter: invert(100%) brightness(120%);
 }
 
 /* MODO METROPOLIS */
@@ -458,7 +460,72 @@ a {
 
 /* End of MAIN */
 
+/* IMAGE COMPONENT (DESKTOP) */
 
+.image-container {
+  align-self: flex-start;
+  display: flex;
+  transition: all .5s ;
+  position: relative;
+  height:100%;
+  width: 100%;
+  
+}
+
+.image-container__background-image {
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  padding: 10px;
+}
+
+
+.image-container__frame {
+  position: absolute;
+  transition: all .3s;
+  border: none;
+  
+}
+
+
+.frame__img-text {
+  display: none;
+  position: absolute;
+  left: 33%;
+  top: 47%;
+  opacity: 0;
+  transition: all 1s linear;
+  letter-spacing: 1px;
+  font-weight: var(--textoLWeightDesktop);
+}
+
+.frame__img-btn-i {
+  position: absolute;
+  opacity: 1;
+  right: 1.5rem;
+  top: 1.5rem;
+  cursor: pointer;
+  z-index: 99;
+  background-color: transparent;
+}
+
+.iBtn {
+  width: 15px;
+  height: 15px;
+}
+
+.xBtn {
+  filter: invert(0%) brightness(120%);
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+
+
+
+/* End of IMAGE COMPONENT */
 
 
 /* ======================================================================================================================= 
@@ -559,7 +626,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    align-self: flex-start;
   }
 
   .main-text {
@@ -572,6 +639,80 @@ a {
 
 
   /* End of MAIN */
+
+
+  /* IMAGE COMPONENT (DESKTOP) */
+
+  .image-container {
+    align-self: flex-start;
+    display: flex;
+    transition: all .5s ;
+    position: relative;
+    height:100%;
+    width: 35%;
+  }
+  .image-container:hover .image-container__background-image {
+    filter: brightness(60%);
+  }
+
+  .image-container__background-image {
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    padding: 0;
+  }
+  
+
+  .image-container__frame {
+    position: absolute;
+    transition: all .3s;
+    border: 4px solid white;
+    scale: 100%;
+    
+  }
+  .image-container__frame:hover {
+    transition: all .1ms ;
+    scale: 96%;
+  }
+
+  .frame__img-text {
+    display: flex;
+    position: absolute;
+    left: 35%;
+    top: 47%;
+    opacity: 0;
+    transition: all 1s linear;
+    letter-spacing: 1px;
+    font-weight: var(--textoLWeightDesktop);
+  }
+
+  .frame__img-btn-plus {
+    position: absolute;
+    opacity: 0;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    cursor: pointer;
+  }
+  .frame__img-btn-plus:hover {
+    background-color: var(--lightColor);
+    color: var(--blackColor);
+    right: 0.5rem;
+    bottom: 0.5rem;
+    padding: 1rem;
+  }
+
+  .image-container__frame:hover .frame__img-text {
+    opacity: 1;
+    top: 45%;
+  }
+
+  .image-container__frame:hover .frame__img-btn-plus {
+    opacity: 1;
+  }
+
+
+  /* End of IMAGE COMPONENT */
 
 
   /*FOOTER*/

@@ -5,6 +5,8 @@ import { LanguageContext } from "../contexts/LanguageContext";
 import logoDesktopforDark from "../icons/logo-text-for-dark.svg"
 import logoDesktopforLight from "../icons/logo-text-for-light.svg"
 import AnimaticLogo from "./animaticLogo";
+import Image from './Image';
+import products from '../products/products'
 
 
 const Main = () => {
@@ -20,7 +22,7 @@ const Main = () => {
         darkMode ? setLogo(logoDesktopforDark) : setLogo(logoDesktopforLight)
     }, [darkMode]);
 
-
+    
     window.addEventListener("resize", () => {
         if(window.innerWidth > 500) {
             setMobile(false)
@@ -28,6 +30,8 @@ const Main = () => {
             setMobile(true)
         }
     })
+
+    
 
     const styles = {
         mainText: {
@@ -62,6 +66,7 @@ const Main = () => {
                     </p>
                     <p onClick={handleExpand} className='main-more'>{ !expand? langScripts.main.verMas[language] : langScripts.main.verMenos[language]}</p>
                 </div>
+                <Image product={products.product1} />
             </div>
         </main>
     )
