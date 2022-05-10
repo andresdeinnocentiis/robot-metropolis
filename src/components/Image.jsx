@@ -22,7 +22,7 @@ const Image = ({product}) => {
             width:'100%',
             height:'100%',
             opacity: opacity,  
-            transition: 'all .1s linear',
+            transition: 'all .2s linear',
         },
         frameMobile:{
             width:'100%',

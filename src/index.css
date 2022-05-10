@@ -485,7 +485,10 @@ a {
   position: absolute;
   transition: all .3s;
   border: 1px solid white;
-  scale: 95%;
+  scale: 100%;
+  transform: scale(100%);
+  -webkit-transform:scale(90%);
+  -moz-transform:scale(99%);
   
 }
 
@@ -687,11 +690,14 @@ a {
     transition: all .3s;
     border: 4px solid white;
     scale: 100%;
-    
+    transform: scale(100%);
+    -webkit-transform:scale(100%)
   }
   .image-container__frame:hover {
-    transition: all .1ms ;
-    scale: 96%;
+    transition: all .3s ;
+    scale: 99%;
+    transform: scale(98%);
+    -webkit-transform:scale(96%)
   }
 
   .frame__img-text {
