@@ -1,7 +1,7 @@
 const products = {
     product1: {
         image: "img1.png",
-        text:"Neon creature is ready",
+        text:"Neon creature is ready.",
     },
     product2: {
         image: "img2.png",

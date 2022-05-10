@@ -484,20 +484,28 @@ a {
 .image-container__frame {
   position: absolute;
   transition: all .3s;
-  border: none;
+  border: 1px solid white;
+  scale: 95%;
   
 }
 
 
 .frame__img-text {
-  display: none;
+  /*display: none;*/
+  display: flex;
   position: absolute;
-  left: 33%;
-  top: 47%;
+  left: 0%;
+  bottom: 0%;
   opacity: 0;
   transition: all 1s linear;
   letter-spacing: 1px;
   font-weight: var(--textoLWeightDesktop);
+  background-color: rgba(0, 0, 0, .5);
+  height: 5rem;
+  width: 100%;
+  padding: 50px 0 0 20px;
+  z-index: 0;
+
 }
 
 .frame__img-btn-i {
@@ -523,7 +531,17 @@ a {
   padding: 5px;
 }
 
-
+.frame__img-btn-plus {
+  position: absolute;
+  opacity: 0;
+  right: 0rem;
+  bottom: 0rem;
+  cursor: pointer;
+  background-color: var(--lightColor);
+  color: var(--blackColor) !important;
+  padding: .5rem .7rem;
+  margin: 1.5rem 1rem;
+}
 
 /* End of IMAGE COMPONENT */
 
@@ -685,18 +703,38 @@ a {
     transition: all 1s linear;
     letter-spacing: 1px;
     font-weight: var(--textoLWeightDesktop);
+    padding: 0;
+    background-color: transparent;
+    width: auto;
+    height: fit-content;
   }
 
   .frame__img-btn-plus {
     position: absolute;
     opacity: 0;
-    right: 1.5rem;
-    bottom: 1.5rem;
+    right: 0rem;
+    bottom: 0rem;
     cursor: pointer;
+    background-color: var(--lightColor);
+    color: var(--blackColor) !important;
+    padding: .5rem .7rem;
+    margin: 1.5rem 1rem;
+  }
+
+  .frame__img-btn-plus {
+    position: absolute;
+    opacity: 1;
+    right: .5rem;
+    bottom: .5rem;
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0;
+    background-color:transparent;
+    color: var(--lightColor)!important;
   }
   .frame__img-btn-plus:hover {
     background-color: var(--lightColor);
-    color: var(--blackColor);
+    color: var(--blackColor)!important;
     right: 0.5rem;
     bottom: 0.5rem;
     padding: 1rem;
