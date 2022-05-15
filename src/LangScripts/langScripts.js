@@ -56,6 +56,19 @@ const langScripts = {
         }
     },
 
+    instagram: {
+        title: {
+            spanish: "INSTAGRAM",
+            english: "INSTAGRAM",
+        },
+        view: {
+            spanish: "Ver perfil",
+            english: "View profile",
+        }
+    },
+
+
+
     footer : {
         text: {
             spanish: "RobotMetropolis 2022",

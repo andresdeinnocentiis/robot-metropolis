@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /* ROOT VARIABLES */
 
@@ -460,7 +460,7 @@ a {
 
 /* End of MAIN */
 
-/* IMAGE COMPONENT (DESKTOP) */
+/* IMAGE COMPONENT (MOBILE) */
 
 .image-container {
   align-self: flex-start;
@@ -547,6 +547,109 @@ a {
 }
 
 /* End of IMAGE COMPONENT */
+
+
+
+/* CONTACT-INSTAGRAM SECTION (MOBILE) */
+
+.contact-instagram-section {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items:center;
+  margin-top: 44px;
+  letter-spacing: 2px;
+  margin: 50px 0;
+}
+
+.contact-section, .instagram-section h1 {
+  margin: 20px 0 40px 0;
+}
+
+/* CONTACT SECTION (MOBILE) */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* End of CONTACT SECTION (MOBILE) */
+
+/* INSTAGRAM SECTION (MOBILE) */
+.instagram-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+}
+
+.instagram-section__profile {
+  width: 100%;
+  background-color: var(--lightColor);
+  padding: 8px;
+  
+}
+
+.profile__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 3px;
+  max-width: 100%;
+  max-height:100%;
+}
+
+.profile__first-line {
+  padding: 4px 6px 0px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.first-line__profile-img {
+  background-color: #000000;
+  background-image: url('./source/images/profile-image.png');
+  background-position: center;
+  background-position-y: 6px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size:40px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.first-line__view-profile {
+  width: 47%;
+  height: 42px;
+  background-color: #0090CE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border-radius: 4px;
+  color: var(--lightColor);
+}
+
+
+.grid-img {
+  max-width: 100%;
+}
+
+/* End of INSTAGRAM (MOBILE) */
+
+/* End of CONTACT-INSTAGRAM SECTION (MOBILE) */
+
+
+
 
 
 /* ======================================================================================================================= 
@@ -756,7 +859,99 @@ a {
   }
 
 
-  /* End of IMAGE COMPONENT */
+  /* End of IMAGE COMPONENT (DESKTOP) */
+
+
+  /* CONTACT-INSTAGRAM SECTION (DESKTOP) */
+
+  .contact-instagram-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    margin-top: 44px;
+    letter-spacing: 2px;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  
+
+  /* CONTACT SECTION (DESKTOP) */
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* End of CONTACT SECTION (DESKTOP) */
+
+  /* INSTAGRAM SECTION (DESKTOP) */
+  .instagram-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  }
+  
+  .instagram-section__profile {
+    width: 100%;
+    background-color: var(--lightColor);
+    padding: 17px;
+  }
+  
+  .profile__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    max-width: 100%;
+    max-height:100%;
+  }
+  
+  .profile__first-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .first-line__profile-img {
+    background-color: #000000;
+    background-image: url('./source/images/profile-image.png');
+    background-position: center;
+    background-position-y: 6px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size:40px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+  
+  .first-line__view-profile {
+    width: 25%;
+    height: 42px;
+    background-color: #0090CE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  
+  }
+  
+  
+  .grid-img {
+    max-width: 100%;
+  }
+  /* End of CONTACT INSTAGRAM (DESKTOP) */
+
+
+  /* End of CONTACT-INSTAGRAM SECTION (DESKTOP) */
 
 
   /*FOOTER*/

@@ -7,7 +7,8 @@ import logoDesktopforLight from "../icons/logo-text-for-light.svg"
 import AnimaticLogo from "./animaticLogo";
 import Image from './Image';
 import products from '../products/products'
-
+import ContactInfo from './ContactInfo';
+import Instagram from './Instagram';
 
 const Main = () => {
     const { darkMode } = useContext(LightDarkThemeContext)
@@ -69,6 +70,10 @@ const Main = () => {
                 </div>
                 <Image product={products.product1} />
             </div>
+            <section className='contact-instagram-section'>
+                <ContactInfo />
+                <Instagram />
+            </section>
         </main>
     )
 }
