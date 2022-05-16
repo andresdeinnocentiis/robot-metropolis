@@ -6,42 +6,54 @@ const AnimaticLogo = () => {
 
   const {darkMode} = useContext(LightDarkThemeContext)
 
+  function visible (elementArray){
+    for (let element of elementArray){
+      element.style.visibility="visible"
+    }
+  }
+
+  function hidden (elementArray){
+    for (let element of elementArray){
+      element.style.visibility="hidden"
+    }
+  }
+
   function animationLogo(){
-    let lineA = document.getElementById("lineA")
-    let lineB = document.getElementById("lineB")
-    let lineC = document.getElementById("lineC")
-    let lineD = document.getElementById("lineD")
-    let lineE = document.getElementById("lineE")
-    let lineF = document.getElementById("lineF")
+    let lineA = document.getElementsByClassName("lineA")
+    let lineB = document.getElementsByClassName("lineB")
+    let lineC = document.getElementsByClassName("lineC")
+    let lineD = document.getElementsByClassName("lineD")
+    let lineE = document.getElementsByClassName("lineE")
+    let lineF = document.getElementsByClassName("lineF")
     setTimeout(()=>{
-      lineA.style.visibility="visible"
+      visible(lineA)
     },1250)
     setTimeout(()=>{
-      lineB.style.visibility="visible"
+      visible(lineB)
     },2500)
     setTimeout(()=>{
-      lineC.style.visibility="visible"
+      visible(lineC)
     },3750)
     setTimeout(()=>{
-      lineA.style.visibility="hidden"
-      lineB.style.visibility="hidden"
-      lineC.style.visibility="hidden"
-      lineD.style.visibility="visible"
-      lineE.style.visibility="visible"
-      lineF.style.visibility="visible"
+      hidden(lineA)
+      hidden(lineB)
+      hidden(lineC)
+      visible(lineD)
+      visible(lineE)
+      visible(lineF)
     },5000)
     setTimeout(()=>{
-      lineA.style.visibility="visible"
-      lineB.style.visibility="visible"
-      lineC.style.visibility="visible"
+      visible(lineA)
+      visible(lineB)
+      visible(lineC)
     },6250)
     setTimeout(()=>{
-      lineA.style.visibility="hidden"
-      lineB.style.visibility="hidden"
-      lineC.style.visibility="hidden"
-      lineD.style.visibility="hidden"
-      lineE.style.visibility="hidden"
-      lineF.style.visibility="hidden"
+      hidden(lineA)
+      hidden(lineB)
+      hidden(lineC)
+      hidden(lineD)
+      hidden(lineE)
+      hidden(lineF)
     },7500)
   }
 
@@ -56,12 +68,12 @@ const AnimaticLogo = () => {
 
   return(
     <div className="logo-containerA">
-      <div id="lineA" className={darkMode? "dark-logoLine" : "light-logoLine"}></div>
-      <div id="lineB" className={darkMode? "dark-logoLine" : "light-logoLine"}></div>
-      <div id="lineC" className={darkMode? "dark-logoLine" : "light-logoLine"}></div>
-      <div id="lineD" className={darkMode? "dark-logoLine" : "light-logoLine"}></div>
-      <div id="lineE" className={darkMode? "dark-logoLine" : "light-logoLine"}></div>
-      <div id="lineF" className={darkMode? "dark-logoLine" : "light-logoLine"}></div>  
+      <div className={darkMode? "dark-logoLine lineA" : "light-logoLine lineA"}></div>
+      <div className={darkMode? "dark-logoLine lineB" : "light-logoLine lineB"}></div>
+      <div className={darkMode? "dark-logoLine lineC" : "light-logoLine lineC"}></div>
+      <div className={darkMode? "dark-logoLine lineD" : "light-logoLine lineD"}></div>
+      <div className={darkMode? "dark-logoLine lineE" : "light-logoLine lineE"}></div>
+      <div className={darkMode? "dark-logoLine lineF" : "light-logoLine lineF"}></div>  
     </div>
   )
 }

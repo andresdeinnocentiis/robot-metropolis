@@ -602,7 +602,7 @@ a {
   }
  
     
-  #lineA{
+  .lineA{
     width: 57.5%;
     position: absolute;
     transform-origin: left;
@@ -610,7 +610,7 @@ a {
     visibility: hidden;
   }
 
-  #lineB{
+  .lineB{
     height: 3px;
     width: 57.5%;
     position: absolute;
@@ -621,7 +621,7 @@ a {
 
   }
 
-  #lineC{
+  .lineC{
     height: 3px;
     width: 57.5%;
     position: absolute;
@@ -632,7 +632,7 @@ a {
     visibility: hidden;
 
   }
-  #lineD{
+  .lineD{
     height: 3px;
     width: 100%;
     position: absolute;
@@ -642,7 +642,7 @@ a {
 
   }
 
-  #lineE{
+  .lineE{
     height: 3px;
     width: 100%; 
     position: absolute;
@@ -652,7 +652,7 @@ a {
 
   }
 
-  #lineF{
+  .lineF{
     height: 3px;
     width: 100%;
     position: absolute;
