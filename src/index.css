@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 /* ROOT VARIABLES */
 
@@ -7,6 +7,7 @@
   /* Color variables */
   --darkColor: #102C2F;
   --lightColor: #FFFFFF;
+  --blackColor:#000000;
   --darkColorTransparent: rgba(16, 44, 47, .8);
   --lightColorTransparent: rgba(255, 255, 255, .8);
   --redColor: #cd003d;
@@ -31,6 +32,7 @@
   --subtitleWeightMobile: 500;
   --textoMWeightDesktop: 500;
   --textoMWeightMobile: 500;
+  --textoAllWeight:100;
   --textoLWeightDesktop: 700;
   --textoLWeightMobile: 700;
 }
@@ -43,6 +45,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  /*outline: 1px solid #f00 !important;*/ /*Activar esta línea para ver el overflow*/
 }
 
 
@@ -50,6 +53,15 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.main-text {
+  text-align:start;
+  letter-spacing: 1px;
+}
+
+.frame__img-btn-i {
+  filter: invert(100%) brightness(120%);
 }
 
 /* MODO METROPOLIS */
@@ -424,10 +436,21 @@ a {
 .main-text {
   text-align: center;
   font-size:var(--h2SizeMobile);
-  height: 80%;
-  height: 7rem;
-  padding: 1.3rem;
-  overflow: hidden;
+  font-weight: var(--textoAllWeight);
+  padding: 1.75rem;
+  transition: all .5s linear;
+  line-height: 25.32px;
+  
+}
+
+.main-text::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.main-text {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .main-more {
@@ -436,6 +459,195 @@ a {
 }
 
 /* End of MAIN */
+
+/* IMAGE COMPONENT (MOBILE) */
+
+.image-container {
+  align-self: flex-start;
+  display: flex;
+  transition: all .5s ;
+  position: relative;
+  height:100%;
+  width: 100%;
+  
+}
+
+.image-container__background-image {
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  padding: 10px;
+}
+
+
+.image-container__frame {
+  position: absolute;
+  transition: all .3s;
+  border: 1px solid white;
+  scale: 100%;
+  transform: scale(100%);
+  -webkit-transform:scale(90%);
+  -moz-transform:scale(99%);
+  
+}
+
+
+.frame__img-text {
+  /*display: none;*/
+  display: flex;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  opacity: 0;
+  transition: all 1s linear;
+  letter-spacing: 1px;
+  font-weight: var(--textoLWeightDesktop);
+  background-color: rgba(0, 0, 0, .5);
+  height: 5rem;
+  width: 100%;
+  padding: 50px 0 0 20px;
+  z-index: 0;
+
+}
+
+.frame__img-btn-i {
+  position: absolute;
+  opacity: 1;
+  right: 1.5rem;
+  top: 1.5rem;
+  cursor: pointer;
+  z-index: 99;
+  background-color: transparent;
+}
+
+.iBtn {
+  width: 15px;
+  height: 15px;
+}
+
+.xBtn {
+  filter: invert(0%) brightness(120%);
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+
+.frame__img-btn-plus {
+  position: absolute;
+  opacity: 0;
+  right: 0rem;
+  bottom: 0rem;
+  cursor: pointer;
+  background-color: var(--lightColor);
+  color: var(--blackColor) !important;
+  padding: .5rem .7rem;
+  margin: 1.5rem 1rem;
+}
+
+/* End of IMAGE COMPONENT */
+
+
+
+/* CONTACT-INSTAGRAM SECTION (MOBILE) */
+
+.contact-instagram-section {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items:center;
+  margin-top: 44px;
+  letter-spacing: 2px;
+  margin: 50px 0;
+}
+
+.contact-section, .instagram-section h1 {
+  margin: 20px 0 40px 0;
+}
+
+/* CONTACT SECTION (MOBILE) */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* End of CONTACT SECTION (MOBILE) */
+
+/* INSTAGRAM SECTION (MOBILE) */
+.instagram-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+}
+
+.instagram-section__profile {
+  width: 100%;
+  background-color: var(--lightColor);
+  padding: 8px;
+  
+}
+
+.profile__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 3px;
+  max-width: 100%;
+  max-height:100%;
+}
+
+.profile__first-line {
+  padding: 4px 6px 0px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.first-line__profile-img {
+  background-color: #000000;
+  background-image: url('./source/images/profile-image.png');
+  background-position: center;
+  background-position-y: 6px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size:40px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.first-line__view-profile {
+  width: 47%;
+  height: 42px;
+  background-color: #0090CE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border-radius: 4px;
+  color: var(--lightColor);
+}
+
+
+.grid-img {
+  max-width: 100%;
+}
+
+/* End of INSTAGRAM (MOBILE) */
+
+/* End of CONTACT-INSTAGRAM SECTION (MOBILE) */
+
 
 
 
@@ -529,6 +741,7 @@ a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 3.5rem;
   }
 
   .main-paragraph {
@@ -537,16 +750,208 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: flex-start;
   }
 
   .main-text {
     text-align:start;
     font-size:var(--h2SizeDesktop);
-    line-height: 35.56px;
+    font-weight: var(--textoAllWeight);
+    line-height: 40.56px;
+    padding: 0 1.75rem 1.75rem 1.75rem;
   }
 
 
   /* End of MAIN */
+
+
+  /* IMAGE COMPONENT (DESKTOP) */
+
+  .image-container {
+    align-self: flex-start;
+    display: flex;
+    transition: all .5s ;
+    position: relative;
+    height:100%;
+    width: 35%;
+  }
+  .image-container:hover .image-container__background-image {
+    filter: brightness(60%);
+  }
+
+  .image-container__background-image {
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    padding: 0;
+  }
+  
+
+  .image-container__frame {
+    position: absolute;
+    transition: all .3s;
+    border: 4px solid white;
+    scale: 100%;
+    transform: scale(100%);
+    -webkit-transform:scale(100%)
+  }
+  .image-container__frame:hover {
+    transition: all .3s ;
+    scale: 99%;
+    transform: scale(98%);
+    -webkit-transform:scale(96%)
+  }
+
+  .frame__img-text {
+    display: flex;
+    position: absolute;
+    left: 35%;
+    top: 47%;
+    opacity: 0;
+    transition: all 1s linear;
+    letter-spacing: 1px;
+    font-weight: var(--textoLWeightDesktop);
+    padding: 0;
+    background-color: transparent;
+    width: auto;
+    height: fit-content;
+  }
+
+  .frame__img-btn-plus {
+    position: absolute;
+    opacity: 0;
+    right: 0rem;
+    bottom: 0rem;
+    cursor: pointer;
+    background-color: var(--lightColor);
+    color: var(--blackColor) !important;
+    padding: .5rem .7rem;
+    margin: 1.5rem 1rem;
+  }
+
+  .frame__img-btn-plus {
+    position: absolute;
+    opacity: 1;
+    right: .5rem;
+    bottom: .5rem;
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0;
+    background-color:transparent;
+    color: var(--lightColor)!important;
+  }
+  .frame__img-btn-plus:hover {
+    background-color: var(--lightColor);
+    color: var(--blackColor)!important;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    padding: 1rem;
+  }
+
+  .image-container__frame:hover .frame__img-text {
+    opacity: 1;
+    top: 45%;
+  }
+
+  .image-container__frame:hover .frame__img-btn-plus {
+    opacity: 1;
+  }
+
+
+  /* End of IMAGE COMPONENT (DESKTOP) */
+
+
+  /* CONTACT-INSTAGRAM SECTION (DESKTOP) */
+
+  .contact-instagram-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    margin-top: 44px;
+    letter-spacing: 2px;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  
+
+  /* CONTACT SECTION (DESKTOP) */
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* End of CONTACT SECTION (DESKTOP) */
+
+  /* INSTAGRAM SECTION (DESKTOP) */
+  .instagram-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  }
+  
+  .instagram-section__profile {
+    width: 100%;
+    background-color: var(--lightColor);
+    padding: 17px;
+  }
+  
+  .profile__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+    max-width: 100%;
+    max-height:100%;
+  }
+  
+  .profile__first-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .first-line__profile-img {
+    background-color: #000000;
+    background-image: url('./source/images/profile-image.png');
+    background-position: center;
+    background-position-y: 6px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size:40px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+  
+  .first-line__view-profile {
+    width: 25%;
+    height: 42px;
+    background-color: #0090CE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+  
+  }
+  
+  
+  .grid-img {
+    max-width: 100%;
+  }
+  /* End of CONTACT INSTAGRAM (DESKTOP) */
+
+
+  /* End of CONTACT-INSTAGRAM SECTION (DESKTOP) */
 
 
   /*FOOTER*/
