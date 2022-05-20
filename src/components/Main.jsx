@@ -9,6 +9,7 @@ import Image from './Image';
 import products from '../products/products'
 import ContactInfo from './ContactInfo';
 import Instagram from './Instagram';
+import BottonVideo from '../source/videos/background-video2.mp4'
 
 const Main = () => {
     const { darkMode } = useContext(LightDarkThemeContext)
@@ -45,7 +46,7 @@ const Main = () => {
     const handleExpand = (e) => {
         if(!expand) {
             setExpand(true)
-            setHeight('21rem')
+            setHeight('22rem')
             setOverflow('auto')
         } else {
             setExpand(false)
@@ -57,7 +58,7 @@ const Main = () => {
 
     return (
         <main className='main'>
-            <div className="main-container">
+            <div id='about' className="main-container">
                 {mobile ? <div className="main-logo"><img className="logoImg" src={logo} alt="logo"></img></div> : <></>}
                 <div className='main-paragraph'>
                     {!mobile && <AnimaticLogo />}
@@ -71,6 +72,9 @@ const Main = () => {
                 <Image product={products.product1} />
             </div>
             <section className='contact-instagram-section'>
+            <video className='videoTag-bottom' autoPlay loop muted>
+                <source src={BottonVideo} type='video/mp4' />
+            </video>
                 <ContactInfo />
                 <Instagram />
             </section>

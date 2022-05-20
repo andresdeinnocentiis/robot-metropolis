@@ -95,22 +95,11 @@ const langScripts = {
             spanish: "CONTACTO",
             english: "CONTACT",
         },
-        name: {
-            spanish: "Nombre",
-            english: "Name",
+        text: {
+            spanish: "Para contactarte con nosotros podés hacerlo por estos medios",
+            english: "You can get in touch with us by the following means",
         },
-        email: {
-            spanish: "Correo electrónico",
-            english: "E-mail",
-        },
-        message: {
-            spanish: "Mensaje",
-            english: "Message",
-        },
-        send: {
-            spanish: "Enviar",
-            english: "Send",
-        },
+        
     }
 
 

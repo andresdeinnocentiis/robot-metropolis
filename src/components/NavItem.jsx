@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
-import {NavLink} from "react-router-dom"
 import { PATHS } from "../routes/routes";
 
 
@@ -13,7 +12,7 @@ const NavItem = () => {
             
             return(
                 <li key={path.pathId} className="nav-li">
-                    <NavLink className="nav-link" to={path.path}>{path.pathName[language]}</NavLink>
+                    <a className="nav-link" href={path.path}>{path.pathName[language]}</a>
                 </li>
             )
         })}
