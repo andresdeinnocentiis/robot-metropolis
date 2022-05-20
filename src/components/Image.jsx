@@ -8,7 +8,7 @@ import PlusButton from './elements/PlusButton';
 
 
 
-const Image = ({product}) => {
+const Image = ({product,percentage}) => {
     const [mobile, setMobile] = useState(isMobile())
     const [onMouseOver, setOnMouseOver] = useState(false)
     const [opacity, setOpacity] = useState('0')
@@ -87,7 +87,7 @@ const Image = ({product}) => {
     }
 
     return (
-        <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className='image-container' >
+        <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className='image-container' style={!mobile ? {"width":`${percentage}%`} : {"width":`100%`} }>
             <img className='image-container__background-image' src={require(`../source/images/products/${product.image}`)} alt="product" />
             <div className='image-container__frame' style={!mobile? styles.frame : styles.frameMobile}>
                 <p className='frame__img-text' style={!mobile ? styles.text : styles.textMobile}>{product.text}</p>

@@ -9,6 +9,8 @@ import Image from './Image';
 import products from '../products/products'
 import ContactInfo from './ContactInfo';
 import Instagram from './Instagram';
+import Carousel1 from './Carousel1';
+import Carousel2 from './Carousel2';
 
 const Main = () => {
     const { darkMode } = useContext(LightDarkThemeContext)
@@ -68,7 +70,11 @@ const Main = () => {
                     </p>
                     <p onClick={handleExpand} className='main-more'>{ !expand? langScripts.main.verMas[language] : langScripts.main.verMenos[language]}</p>
                 </div>
-                <Image product={products.product1} />
+                <Image product={products.product1} percentage={35}/>
+            </div>
+            <Carousel1 title={langScripts.projects.title[language]}/>
+            <div>
+                <Carousel2 title={langScripts.lab.title[language]}/>
             </div>
             <section className='contact-instagram-section'>
                 <ContactInfo />
