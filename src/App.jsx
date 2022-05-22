@@ -1,5 +1,6 @@
 import { LanguageContextProvider } from "./contexts/LanguageContext";
 import { LightDarkThemeContextProvider } from "./contexts/LightDarkThemeContext";
+import { OpenModalContextProvider } from "./contexts/OpenModalContext";
 import {
   BrowserRouter,
   Routes,
@@ -15,6 +16,7 @@ function App() {
   return (
     <LightDarkThemeContextProvider>
     <LanguageContextProvider>
+    <OpenModalContextProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -22,6 +24,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+    </OpenModalContextProvider>
     </LanguageContextProvider>
     </LightDarkThemeContextProvider>
   );

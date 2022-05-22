@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import { isMobile } from "../functions/isMobile";
 import { LightDarkThemeContext } from "../contexts/LightDarkThemeContext";
 import { LanguageContext } from "../contexts/LanguageContext";
+import { OpenModalContext } from '../contexts/OpenModalContext';
 import logoDesktopforDark from "../icons/logo-text-for-dark.svg"
 import logoDesktopforLight from "../icons/logo-text-for-light.svg"
 import AnimaticLogo from "./animaticLogo";
@@ -11,22 +12,23 @@ import ContactInfo from './ContactInfo';
 import Instagram from './Instagram';
 import Carousel1 from './Carousel1';
 import Carousel2 from './Carousel2';
+import Modal from './Modal';
+import ProductDetail from './ProductDetail';
 
 const Main = () => {
     const { darkMode } = useContext(LightDarkThemeContext)
     const { language, langScripts } = useContext(LanguageContext)
+    const {isOpen,setIsOpen,openModal,closeModal} = useContext(OpenModalContext)
     const [mobile, setMobile] = useState(isMobile())
     const [logo, setLogo] = useState(logoDesktopforDark)
     const [expand, setExpand] = useState(false)
     const [height, setHeight] = useState('10rem')
     const [overflow, setOverflow] = useState('hidden')
-    
 
     useEffect(() => {
         darkMode ? setLogo(logoDesktopforDark) : setLogo(logoDesktopforLight)
     }, [darkMode]);
-
-    
+   
     window.addEventListener("resize", () => {
         if(window.innerWidth > 500) {
             setMobile(false)
@@ -72,13 +74,20 @@ const Main = () => {
                 </div>
                 <Image product={products.product1} percentage={35}/>
             </div>
-            <Carousel1 title={langScripts.projects.title[language]}/>
-            <div>
+            <section>
+                <Carousel1 title={langScripts.projects.title[language]}/>
+            </section>
+            <section>
                 <Carousel2 title={langScripts.lab.title[language]}/>
-            </div>
+            </section>
             <section className='contact-instagram-section'>
                 <ContactInfo />
                 <Instagram />
+            </section>
+            <section>
+                <Modal closeModal={closeModal} isOpen={isOpen}>
+                    <ProductDetail/>
+                </Modal>
             </section>
         </main>
     )

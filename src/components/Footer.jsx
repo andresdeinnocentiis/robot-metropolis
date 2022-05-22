@@ -18,7 +18,6 @@ const Footer = () => {
         setMobile(true)
     }
   })
-
   return(
     <>
       <footer className="footer-container">

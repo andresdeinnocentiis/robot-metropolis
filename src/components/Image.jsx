@@ -92,7 +92,7 @@ const Image = ({product,percentage}) => {
             <div className='image-container__frame' style={!mobile? styles.frame : styles.frameMobile}>
                 <p className='frame__img-text' style={!mobile ? styles.text : styles.textMobile}>{product.text}</p>
                 {onMouseOver && <AnimaticLogo />}
-                { mobile ? clicked && <PlusButton styles={styles.btnMobile}/> : <PlusButton styles={styles.text} />}
+                { mobile ? clicked && <PlusButton styles={styles.btnMobile} product={product}/> : <PlusButton styles={styles.text} product={product} />}
             </div>
             {mobile && (!clicked? <img onClick={handleBtnClick} className='frame__img-btn-i iBtn' src={btnImage} alt='button'></img> : <img onClick={handleBtnClick} className='frame__img-btn-i xBtn' src={btnImage} alt='button' ></img>)}
         </div>
