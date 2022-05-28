@@ -1,17 +1,19 @@
-import React from 'react'
-
+import React,{useContext} from 'react'
 import {ReactComponent as LeftArrow} from '../source/images/iconmonstr-arrow-left-lined.svg'
 import {ReactComponent as RightArrow} from '../source/images/iconmonstr-arrow-right-lined.svg'
 import { useRef, useEffect,useCallback } from 'react'
+import { LightDarkThemeContext } from '../contexts/LightDarkThemeContext';
 
 
 const Slideshow2 = ({
   children,
-  controles= true, 
   tiempoIntervalo= 5000, 
   autoplay = true, 
   velocidad = 300
   }) => {
+
+  const { darkMode } = useContext(LightDarkThemeContext)
+  
   const slideShow = useRef(null)
 
   const slideRight = useCallback (()=>{
@@ -88,14 +90,14 @@ const Slideshow2 = ({
       <div className='slideContainer' ref={slideShow}>
         {children}
       </div>
-      {controles && <div className='slideControls__itemView'>
-        <button className='slideBoton slideBotonLeft' onClick={slideLeft}>
-          <LeftArrow className='arrow' />
+      <div className='slideControls__itemView'>
+        <button className={darkMode?'slideBotonDark slideBotonLeft':'slideBotonLight slideBotonLeft'} onClick={slideLeft}>
+          <LeftArrow className={darkMode?'arrowLeftDark':'arrowLeftLight'} />
         </button>
-        <button className='slideBoton slideBotonRight' onClick={slideRight}>
-          <RightArrow className='arrow' />
+        <button className={darkMode?'slideBotonDark slideBotonRight':'slideBotonLight slideBotonRight'} onClick={slideRight}>
+          <RightArrow className={darkMode?'arrowRightDark':'arrowRightLight'} />
         </button>
-      </div>}
+      </div>
     </div>
   )
 }

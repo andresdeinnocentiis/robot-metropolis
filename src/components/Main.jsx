@@ -10,8 +10,8 @@ import Image from './Image';
 import products from '../products/products'
 import ContactInfo from './ContactInfo';
 import Instagram from './Instagram';
-import Carousel1 from './Carousel1';
-import Carousel2 from './Carousel2';
+import CarouselProjects from './CarouselProjects';
+import CarouselLab from './CarouselLab';
 import Modal from './Modal';
 import ProductDetail from './ProductDetail';
 
@@ -75,10 +75,10 @@ const Main = () => {
                 <Image product={products.product1} percentage={35}/>
             </div>
             <section>
-                <Carousel1 title={langScripts.projects.title[language]}/>
+                <CarouselProjects title={langScripts.projects.title[language]}/>
             </section>
             <section>
-                <Carousel2 title={langScripts.lab.title[language]}/>
+                <CarouselLab title={langScripts.lab.title[language]}/>
             </section>
             <section className='contact-instagram-section'>
                 <ContactInfo />

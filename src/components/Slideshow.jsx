@@ -1,18 +1,36 @@
-import React from 'react'
-
+import React,{useContext, useState} from 'react'
 import {ReactComponent as LeftArrow} from '../source/images/iconmonstr-arrow-left-lined.svg'
 import {ReactComponent as RightArrow} from '../source/images/iconmonstr-arrow-right-lined.svg'
 import { useRef, useEffect,useCallback } from 'react'
+import useWindowSize from "../functions/UseWindowSize";
+import { LightDarkThemeContext } from '../contexts/LightDarkThemeContext';
+
 
 
 const Slideshow = ({
   children,
-  controles= true, 
+  cantSlides, 
   tiempoIntervalo= 5000, 
   autoplay = true, 
-  velocidad = 300
+  velocidad = 300,
+  selectedIndicator,
+  handleSelectedIndicator
   }) => {
+
+  
+  const width = useWindowSize()
+  const { darkMode } = useContext(LightDarkThemeContext)
+  const [buttonDisabled, setButtonDisabled] = useState(false)
   const slideShow = useRef(null)
+  const slideIndicator = Array.from({length: cantSlides}, (_, i) => i + 1)
+
+  const waitButton = () => {
+    if(buttonDisabled===false)
+      setButtonDisabled(true)
+    setTimeout(()=>{
+      setButtonDisabled(false)
+    },400)
+  }
 
   const slideRight = useCallback (()=>{
     //Compruebo que el slideshow tenga elementos
@@ -85,17 +103,25 @@ const Slideshow = ({
 
   return(
     <div className='slideshow-container'>
-      <div className='slideContainer' ref={slideShow}>
+      <div className='slideContainer' style={width<900?{"maxHeight":`${width}px`}:{"height":"100%"}} ref={slideShow}>
         {children}
       </div>
-      {controles && <div className='slideControls'>
-        <button className='slideBoton slideBotonLeft' onClick={slideLeft}>
-          <LeftArrow className='arrow' />
+      <div className='slideIndicatorContainer'>
+        <ol className='slideIndicatorList'>
+          {slideIndicator.map(number=>
+          <li><div className={darkMode
+          ?selectedIndicator===number?"slideIndicator slideIndicatorDarkActivated":"slideIndicator"
+          :selectedIndicator===number?"slideIndicator slideIndicatorLightActivated":"slideIndicator"}></div></li>)}
+        </ol>
+      </div>
+      <div className='slideControls'>
+        <button className={darkMode?'slideBotonDark slideBotonLeft':'slideBotonLight slideBotonLeft'} onClick={()=>{waitButton();slideLeft();handleSelectedIndicator(-1)}} disabled={buttonDisabled}>
+          <LeftArrow className={darkMode?'arrowLeftDark':'arrowLeftLight'} />
         </button>
-        <button className='slideBoton slideBotonRight' onClick={slideRight}>
-          <RightArrow className='arrow' />
+        <button className={darkMode?'slideBotonDark slideBotonRight':'slideBotonLight slideBotonRight'} onClick={()=>{waitButton();slideRight();handleSelectedIndicator(1)}} disabled={buttonDisabled} >
+          <RightArrow className={darkMode?'arrowRightDark':'arrowRightLight'} />
         </button>
-      </div>}
+      </div>
     </div>
   )
 }

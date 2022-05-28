@@ -28,7 +28,7 @@ const products = {
         text:"",
     },
     product8: {
-        image: "img8.png",
+        image: "img8.gif",
         text:"",
     },
     product9: {
@@ -36,11 +36,11 @@ const products = {
         text:"",
     },
     product10: {
-        image: "img10.png",
+        image: "img10.gif",
         text:"",
     },
     product11: {
-        image: "img11.png",
+        image: "img11.gif",
         text:"",
     },
     product12: {
@@ -48,7 +48,7 @@ const products = {
         text:"",
     },
     product13: {
-        image: "img13.png",
+        image: "img13.gif",
         text:"",
     },
     product14: {
@@ -60,7 +60,7 @@ const products = {
         text:"",
     },
     product16: {
-        image: "img16.png",
+        image: "img16.gif",
         text:"",
     },
 }
