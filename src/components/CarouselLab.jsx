@@ -29,7 +29,7 @@ const CarouselLab = ({title}) => {
     }
   }
   return (
-    <div style={{"marginTop":"71px"}}>
+    <div id='lab' style={{"marginTop":"50px"}}>
       <h1 className='title-Carousel'>{title}</h1>
       {/* El Slideshow acepta parametros:
         tiempoIntervalo: tiempo hasta que el carrusel pasa a otro slide

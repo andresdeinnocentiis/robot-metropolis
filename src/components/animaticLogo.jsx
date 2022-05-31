@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { LightDarkThemeContext } from "../contexts/LightDarkThemeContext";
 
 
-const AnimaticLogo = () => {
+const AnimaticLogo = ({isOnImage}) => {
 
   const {darkMode} = useContext(LightDarkThemeContext)
 
@@ -68,12 +68,12 @@ const AnimaticLogo = () => {
 
   return(
     <div className="logo-containerA">
-      <div className={darkMode? "dark-logoLine lineA" : "light-logoLine lineA"}></div>
-      <div className={darkMode? "dark-logoLine lineB" : "light-logoLine lineB"}></div>
-      <div className={darkMode? "dark-logoLine lineC" : "light-logoLine lineC"}></div>
-      <div className={darkMode? "dark-logoLine lineD" : "light-logoLine lineD"}></div>
-      <div className={darkMode? "dark-logoLine lineE" : "light-logoLine lineE"}></div>
-      <div className={darkMode? "dark-logoLine lineF" : "light-logoLine lineF"}></div>  
+      <div className={isOnImage? "dark-logoLine lineA" : darkMode? "dark-logoLine lineA" : "light-logoLine lineA" }></div>
+      <div className={isOnImage? "dark-logoLine lineB" : darkMode? "dark-logoLine lineB" : "light-logoLine lineB" }></div>
+      <div className={isOnImage? "dark-logoLine lineC" : darkMode? "dark-logoLine lineC" : "light-logoLine lineC" }></div>
+      <div className={isOnImage? "dark-logoLine lineD" : darkMode? "dark-logoLine lineD" : "light-logoLine lineD" }></div>
+      <div className={isOnImage? "dark-logoLine lineE" : darkMode? "dark-logoLine lineE" : "light-logoLine lineE" }></div>
+      <div className={isOnImage? "dark-logoLine lineF" : darkMode? "dark-logoLine lineF" : "light-logoLine lineF" }></div>  
     </div>
   )
 }

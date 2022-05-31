@@ -33,7 +33,7 @@ const CarouselProjects = ({title}) => {
 
   const { darkMode } = useContext(LightDarkThemeContext)
   return (
-    <div style={{"marginTop":"71px","position":"relative"}}>
+    <div id='about' style={{"marginTop":"25px","position":"relative"}}>
       <video className={darkMode?'backgroundVideoProjectsDark':'backgroundVideoProjectsLight'} autoPlay muted loop playsInline>
         <source src={require("../source/videos/background-video.mp4")} type="video/mp4"></source>
       </video>

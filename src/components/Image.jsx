@@ -4,6 +4,7 @@ import AnimaticLogo from "../components/animaticLogo";
 import iBtn from '../source/images/ibtn.svg'
 import xBtn from '../source/images/x.png'
 import PlusButton from './elements/PlusButton';
+import useWindowSize from '../functions/UseWindowSize';
 
 
 
@@ -16,6 +17,7 @@ const Image = ({product,percentage}) => {
     const [padding, setPadding] = useState('50px 0 0 20px')
     const [btnImage, setBtnImage] = useState(iBtn)
     const [clicked, setClicked] = useState(false)
+    const width = useWindowSize()
 
     let styles = {
         frame: {
@@ -23,6 +25,9 @@ const Image = ({product,percentage}) => {
             height:'100%',
             opacity: opacity,  
             transition: 'all .2s linear',
+            display:'flex',
+            flexDirection:'column',
+            justifyContent:'flex-end',
         },
         frameMobile:{
             width:'100%',
@@ -87,11 +92,11 @@ const Image = ({product,percentage}) => {
     }
 
     return (
-        <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className='image-container' style={!mobile ? {"width":`${percentage}%`} : {"width":`100%`} }>
+        <div onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} className='image-container' style={width>900 ? {"width":`${percentage}%`} : {"width":`100%`}}>
             <img className='image-container__background-image' src={require(`../source/images/products/${product.image}`)} alt="product" />
             <div className='image-container__frame' style={!mobile? styles.frame : styles.frameMobile}>
                 <p className='frame__img-text' style={!mobile ? styles.text : styles.textMobile}>{product.text}</p>
-                {onMouseOver && <AnimaticLogo />}
+                {onMouseOver && <AnimaticLogo isOnImage={true} />}
                 { mobile ? clicked && <PlusButton styles={styles.btnMobile} product={product}/> : <PlusButton styles={styles.text} product={product} />}
             </div>
             {mobile && (!clicked? <img onClick={handleBtnClick} className='frame__img-btn-i iBtn' src={btnImage} alt='button'></img> : <img onClick={handleBtnClick} className='frame__img-btn-i xBtn' src={btnImage} alt='button' ></img>)}
