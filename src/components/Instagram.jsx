@@ -20,9 +20,9 @@ const Instagram = () => {
             <div className='instagram-section__profile'>
                 <div className='profile__first-line'>
                     <div className='first-line__profile-img'></div>
-                    <div className='first-line__view-profile'>
-                        <a href="https://www.instagram.com/robotmetropolis/" target="_blank" rel="noreferrer">{langScripts.instagram.view[language]}</a>
-                    </div>
+                    <a href="https://www.instagram.com/robotmetropolis/" target="_blank" rel="noreferrer" className='first-line__view-profile'>
+                        <p>{langScripts.instagram.view[language]}</p>
+                    </a>
                 </div>
                 <div className='profile__grid'>
                     <a href='https://www.instagram.com/p/BsVMHK9AcQG/' className='grid__img' target="_blank" rel="noreferrer">

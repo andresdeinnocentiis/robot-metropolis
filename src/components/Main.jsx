@@ -14,6 +14,7 @@ import CarouselProjects from './CarouselProjects';
 import CarouselLab from './CarouselLab';
 import Modal from './Modal';
 import ProductDetail from './ProductDetail';
+import BottonVideo from '../source/videos/background-video2.mp4'
 
 const Main = () => {
     const { darkMode } = useContext(LightDarkThemeContext)
@@ -49,7 +50,7 @@ const Main = () => {
     const handleExpand = (e) => {
         if(!expand) {
             setExpand(true)
-            setHeight('21rem')
+            setHeight('22rem')
             setOverflow('auto')
         } else {
             setExpand(false)
@@ -61,7 +62,7 @@ const Main = () => {
 
     return (
         <main className='main'>
-            <div className="main-container">
+            <div id='about' className="main-container">
                 {mobile ? <div className="main-logo"><img className="logoImg" src={logo} alt="logo"></img></div> : <></>}
                 <div className='main-paragraph'>
                     {!mobile && <AnimaticLogo />}
@@ -81,6 +82,9 @@ const Main = () => {
                 <CarouselLab title={langScripts.lab.title[language]}/>
             </section>
             <section className='contact-instagram-section'>
+            <video className='videoTag-bottom' autoPlay loop muted>
+                <source src={BottonVideo} type='video/mp4' />
+            </video>
                 <ContactInfo />
                 <Instagram />
             </section>

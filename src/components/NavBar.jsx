@@ -32,8 +32,10 @@ const Navbar = () => {
     }, [darkMode]);
     
 
+
+
     window.addEventListener("resize", () => {
-        if(window.innerWidth > 500) {
+        if(window.innerWidth > 900) {
             setNavbarOpen("")
             setMobile(false)
         } else {
@@ -48,7 +50,19 @@ const Navbar = () => {
             <div className={`nav-collapsed ${darkMode? "dark-theme-navbar": "light-theme-navbar"}`}>
                 <div className={`nav-logo ${navbarOpen ? 'full-logo' : ''}`}><NavLink className='logoLink' to={"/"}><img className="logoImg" src={mobile && !navbarOpen ? logo.mobile : logo.desktop} alt="logo"></img></NavLink></div>
                 {mobile ? 
+                <>
                     <TogglerOpen onClick={handleToggle}  toggleIcon={toggleIcon} /> 
+                    <div className={`nav-container ${navbarOpen} ${darkMode? "dark-theme-navbar-ul": "light-theme-navbar-ul"}`} >          
+                        <div className="nav-menu">
+                            <ul className="nav-ul">
+                                <NavItem />
+                                <LangSwitcher />
+                                <li className="li-instagram"><a href="http://"><i className="fab fa-instagram"></i></a></li>
+                                <ButtonToggleLightDarkTheme />
+                            </ul>
+                        </div>
+                    </div> 
+                </>
                         : 
                     <div className={`nav-container nav__active`}>          
                         <div className="nav-menu">
@@ -60,22 +74,14 @@ const Navbar = () => {
                                 
                             </ul>
                         </div>
-                    </div>}
-                </div>
-                {navbarOpen ? 
-                    <div className={`nav-container ${navbarOpen} ${darkMode? "dark-theme-navbar": "light-theme-navbar"}`}>          
-                        <div className="nav-menu">
-                            <ul className="nav-ul">
-                                <NavItem />
-                                <LangSwitcher />
-                                <li className="li-instagram"><a href="http://"><i className="fab fa-instagram"></i></a></li>
-                                <ButtonToggleLightDarkTheme />
-                            </ul>
-                        </div>
-                    </div> 
-                        :
-                    <></>
+                    </div>
                 }
+                </div>
+                 
+                
+                        
+                    
+                
         </nav>
     )
 }
