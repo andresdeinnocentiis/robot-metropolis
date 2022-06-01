@@ -62,7 +62,7 @@ const Main = () => {
 
     return (
         <main className='main'>
-            <div id='about' className="main-container">
+            <div className="main-container">
                 {mobile ? <div className="main-logo"><img className="logoImg" src={logo} alt="logo"></img></div> : <></>}
                 <div className='main-paragraph'>
                     {!mobile && <AnimaticLogo />}
@@ -75,10 +75,10 @@ const Main = () => {
                 </div>
                 <Image product={products.product1} percentage={35}/>
             </div>
-            <section>
+            <section id='about'>
                 <CarouselProjects title={langScripts.projects.title[language]}/>
             </section>
-            <section>
+            <section id='lab'>
                 <CarouselLab title={langScripts.lab.title[language]}/>
             </section>
             <section className='contact-instagram-section'>

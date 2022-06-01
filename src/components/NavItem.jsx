@@ -5,7 +5,6 @@ import { PATHS } from "../routes/routes";
 
 const NavItem = () => {
     const { language } = useContext(LanguageContext)
-
     return(
         <>
         {PATHS.map((path) => {

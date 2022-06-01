@@ -1099,7 +1099,7 @@ a {
   /* End of CONTACT-INSTAGRAM SECTION (DESKTOP) */
 }
 
-/*FOOTER SECTION (DESKTOP) */
+/*FOOTER SECTION*/
 .footer-container{
   max-width: 100%;
   display: flex;
@@ -1210,19 +1210,38 @@ a {
   transform: rotate(-60deg);
   visibility: hidden;
 }
-  /* End of FOOTER SECTION (DESKTOP) */
+/* End of FOOTER SECTION */
 
-  /* Corarusel SECTION 1 & 2 (DESKTOP) */
+
+/* CAROUSEL SECTION (PROJECT & LAB) */
+#about:target,#lab:target{
+  scroll-margin-top: 100px;
+}
+
+.sectionCarusel_container{
+  margin-top: 75px;
+}
 
 .title-Carousel{
   font-family:'Josefin-Sans';
-  font-size: 32px;
+  font-size: var(--h1SizeDesktop);
   text-align: center;
   min-width: 100%;
   letter-spacing: 0.3rem;
   z-index: 0;
 }
 
+@media (max-width: 768px) {
+  .title-Carousel{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title-Carousel{
+    font-size: var(--h1SizeMobile);
+  }
+}
 .carousel-imgContainer{
   display: flex;
   flex-flow: row nowrap;
@@ -1252,7 +1271,7 @@ a {
 
 .slideshow-container{
   overflow: hidden;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .slideContainer{
@@ -1426,13 +1445,10 @@ a {
   filter: blur(45px) opacity(30%);
   z-index: -50;
 }
+/* End of CAROUSEL SECTION (PROJECT & LAB) */
 
 
-
-  /* End of Corarusel SECTION (DESKTOP) */
-
-  /* PRODUCT_DETAIL SECTION (DESKTOP) */
-
+/* PRODUCT_DETAIL SECTION*/
   .itemView-Container{
     width: 100%;
     height: 100%;
@@ -1617,13 +1633,10 @@ a {
     .itemView-text{
       font-size: 18px;
     }
-  }
-
+  } 
+/* End of PRODUCT_DETAIL SECTION*/
   
-  
-  /* End of ITEMVIEW SECTION (DESKTOP) */
-  
-
+/* MODAL SECTION*/
   .modal-dark{
     position: fixed;
     z-index:999;
@@ -1714,6 +1727,7 @@ a {
       height: 95vh;
     }
   }
+/* End of MODAL SECTION*/
 
 
   
