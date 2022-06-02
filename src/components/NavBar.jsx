@@ -57,7 +57,7 @@ const Navbar = () => {
                             <ul className="nav-ul">
                                 <NavItem />
                                 <LangSwitcher />
-                                <li className="li-instagram"><a href="http://"><i className="fab fa-instagram"></i></a></li>
+                                <li className="li-instagram"><a href="https://www.instagram.com/robotmetropolis/" rel="noreferrer" target="_blank"><i className="fab fa-instagram"></i></a></li>
                                 <ButtonToggleLightDarkTheme />
                             </ul>
                         </div>
