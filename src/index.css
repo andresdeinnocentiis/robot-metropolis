@@ -1721,7 +1721,7 @@ a {
     }
   }
 
-  @media (min-width: 768px) and (max-height:520px) {
+  @media (min-width: 768px) and (max-height:768px) {
     .modal-container-light,.modal-container-dark{
       max-width: 95vw;
       height: 95vh;
